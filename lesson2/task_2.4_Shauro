@@ -1,0 +1,4 @@
+  159  cd
+  161  source venv/bin/activate
+  163  touch main_task_2.4_Shauro.py
+  165  python3 ./main_task_2.4_Shauro.py

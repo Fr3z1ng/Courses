@@ -1,0 +1,6 @@
+x = float(input("Введите число а: "))
+y = float(input("Введите число b: "))
+answer_1 = abs(x) - abs(y)
+answer_2 = 1 + abs(x * y)
+print(answer_1)
+print(answer_2)

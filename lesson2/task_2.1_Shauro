@@ -1,0 +1,9 @@
+   74  clear
+   76  mkdir test
+   77  pwd
+   79  mkdir test1
+   81  touch main.py
+   83  cd
+   84  cd test
+   85  rm -rf test1
+

@@ -1,0 +1,7 @@
+  140  cd test
+  141  python3 -m venv venv
+  142  source venv/bin/activate
+  143  touch main_task_2.3.py
+  149  python3 ./main_task_2.3.py
+  
+  

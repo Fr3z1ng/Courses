@@ -1,0 +1,11 @@
+   92  python3 -m venv.ven
+   94  ~$ python3 -m venv.venv
+   96  source ven/bin/activate
+   98  cd
+  100  python3 -m venv venv
+  101  source venv/bin/activate
+  102  pip install requests
+  103  pip install lxml
+  104  pip freeze > requirements.txt
+  105  clear
+  107  deactivate
