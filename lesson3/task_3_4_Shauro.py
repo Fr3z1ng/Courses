@@ -3,9 +3,9 @@ b = input("Введите символ,который желаете искат�
 start = -1
 count = 0
 while True:
-    start = a.find(b,start+1)
+    start = a.find(b, start + 1)
     if start == -1:
         break
     else:
         count += 1
-print("Вхождений в строке символа:",count)
+print("Вхождений в строке символа:", count)
