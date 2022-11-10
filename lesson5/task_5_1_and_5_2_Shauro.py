@@ -5,7 +5,9 @@
 2. Завернуть программу из п.1  в вечный цикл.
 
 """
-
+# from itertools import repeat #
+# for i in repeat(0):
+# for i in iter(int, 1): # загуглил вашу задачку с бесконечным циклом через for
 while True:
     age = int(input("Введите ваш возраст: "))
     if age < 18:
