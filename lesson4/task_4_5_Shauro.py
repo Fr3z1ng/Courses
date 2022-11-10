@@ -10,7 +10,8 @@ date_info = date_info.split("/")
 if int(date_was_born[2]) > int(date_info[2]):
     print(f"Вы тогда еще не родились")
 else:
-    year = (int(date_info[2])) - (int(date_was_born[2]))
-    month = abs(int(date_was_born[1]) - (int(date_info[1]))) * 30
-    days = month + abs(int(date_was_born[0]) - int(date_info[0]))
-    print(f"Вам было {year} полных лет и столько {days} дней")
+    year = (int(date_info[2]) - (int(date_was_born[2]))) * 365
+    month = (int(date_info[1]) - (int(date_was_born[1]))) * 30
+    days = (int(date_info[0]) - int(date_was_born[0]))
+    total = year + month + days
+    print(f"Вам было {year//365} полных лет и столько {days%365} дней")

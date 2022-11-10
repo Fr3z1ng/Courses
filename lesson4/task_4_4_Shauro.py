@@ -19,3 +19,5 @@ answer_1 = set_1 | set_2 | set_3
 print("Ответ на первое условие", answer_1)
 answer_2 = (set_1 ^ set_2) | (set_2 ^ set_3)
 print("Ответ на третье условие", answer_2)
+answer_3 = (set_1 - set_2 - set_3) | (set_2 - set_1 - set_3) | (set_3 - set_1 - set_2)
+print(answer_3)
