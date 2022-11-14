@@ -18,11 +18,11 @@ dict_2 = {'a': 200, 'c': 300}
 dict_3 = {'a': 300, 'd': 100}
 
 
-def sum_dict(*args):
-    result = args
-    answer = {}
-    for d in result:
-        for key, value in d.items():
+def sum_dict(*args) -> dict:
+    result = args # записывается в новую переменную все словари в виде кортежа
+    answer = {} # переменная для записи обновленных словарей
+    for d in result: # проход по всем словарям
+        for key, value in d.items(): # проход по ключу и значению в словарях
             if key in answer:
                 answer[key] += value
             else:

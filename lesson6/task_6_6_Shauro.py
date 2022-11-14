@@ -6,6 +6,9 @@ sep = input("Введите разделитель: ")
 
 
 def split_func(s: str, sep: str):
+    """
+    функция - замена методу split()
+    """
     split_value = []
     word = ''
     for c in s:
