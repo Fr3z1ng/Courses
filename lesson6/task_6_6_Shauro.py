@@ -2,19 +2,21 @@
 6. Создайте функцию которая работает так же как str.split() метод (естественно, без использования str.split())
 """
 s = "I,love,Python"
-# sep = input("Введите разделитель: ")
-list_1 = []
-for i in s:
-    list_1.append(i.replace(",", " "))
+sep = input("Введите разделитель: ")
 
-print(list_1)
 
-# s = s.split(",")
-# print(s)
+def split_func(s: str, sep: str):
+    split_value = []
+    word = ''
+    for c in s:
+        if c == sep:
+            split_value.append(word)
+            word = ''
+        else:
+            word += c
+    if word:
+        split_value.append(word)
+    return split_value
 
-# def split_func(s: str, sep: str):
-#     s = s.replace(" ", sep)
-#     print(s)
-#
-#
-# split_func(s, sep)
+
+print(split_func(s, sep))

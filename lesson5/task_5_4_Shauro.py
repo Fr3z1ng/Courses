@@ -18,9 +18,6 @@ def random_game() -> None:
             break
         elif n > int(guess):
             print(f"Your number less")
-        elif guess == "stop":
-            print(f"Users say 'stop'")
-            break
         elif n < int(guess):
             print(f"Your number greater")
         elif n == int(guess):
