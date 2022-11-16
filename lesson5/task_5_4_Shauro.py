@@ -13,7 +13,7 @@ def random_game() -> None:
     n = randint(0, 10)
     while True:
         guess = input("Введите число или команду 'stop': ")
-        if guess == "stop":
+        if guess.lower() == "stop":
             print(f"Users say 'stop'")
             break
         elif n > int(guess):
