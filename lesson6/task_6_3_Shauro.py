@@ -17,7 +17,7 @@ def get_digits(num: int) -> tuple:
     s = str(num)
     new_list = []
     for i in s:
-        new_list.append(i)
+        new_list.append(int(i))
 
     return tuple(new_list)
 
