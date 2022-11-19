@@ -15,6 +15,7 @@ test(1, 'time')
 from datetime import datetime
 import functools
 
+
 def log_function(func):
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
@@ -32,4 +33,3 @@ def test(a: int, b: str):
 
 
 test(1, "time")
-
