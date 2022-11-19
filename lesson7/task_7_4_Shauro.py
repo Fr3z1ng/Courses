@@ -12,23 +12,24 @@ test(1, 'time')
 Вывод: 2022-11-16 08:44:42.290025 | Function: test | Expected: {'a': <class 'int'>, 'b': <class 'str'>} | Input: (1, 'time')
 
 """
-import time
-
+from datetime import datetime
+import functools
 
 def log_function(func):
-    def wrapper(*args):
-        start = time.time()
-        result = func(*args)
-        name = result.__name__
-        annotations = result.__annotations__
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        start = datetime.now()
+        result = func(*args, **kwargs)
+        print(f"{start}| Function: {func.__name__} | Expected: {func.__annotations__} | Input: {args}")
+        return result
+
+    return wrapper
 
 
+@log_function
+def test(a: int, b: str):
+    print(a, b)
 
-a = 5
-b = 3
 
+test(1, "time")
 
-def sasha(a:int, b:int):
-    print(sasha.__doc__)
-    print(sasha.__annotations__)
-sasha(a,b)
