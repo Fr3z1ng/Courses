@@ -14,12 +14,12 @@ def get_digits(num: int) -> tuple:
     :param num:
     :return:
     """
-    s = str(num)
-    new_list = []
-    for i in s:
-        new_list.append(int(i))
+    # s = str(num)
+    # new_list = []
+    # for i in s:
+    #     new_list.append(int(i))
 
-    return tuple(new_list)
+    return tuple([int(x) for x in str(num)])
 
 if __name__ == '__main__':
     print(get_digits(num))
