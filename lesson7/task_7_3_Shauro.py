@@ -9,6 +9,9 @@ list_2 = [4, 5, 6]
 
 
 def mapping(value_1, *args):
+    """
+    функция работает как функция map,но с одним аргументом
+    """
     new_list = []
     values = args
     if len(values) == 1:
