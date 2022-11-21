@@ -15,6 +15,9 @@ for i in values:
         suma += digit
     summa_list.append(suma)
 print(summa_list)
-a = list(filter(lambda x: x % 9 == 0, values)) # нахождения числа,которое делится на 9
-b = list(filter(lambda x: x % 9 == 0, summa_list)) # нахождение суммы цифр числа,которое делится на 9
-print(a,b)
+a = list(filter(lambda x: x % 9 == 0, values))  # нахождения числа,которое делится на 9
+b = list(filter(lambda x: x % 9 == 0, summa_list))  # нахождение суммы цифр числа,которое делится на 9
+"""
+не понял до конца как решать это задание,поэтому остановился на таком решении
+"""
+print(a, b)
