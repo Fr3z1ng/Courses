@@ -17,10 +17,13 @@ import json
 
 name = "Tim", "John", "Sally", "Trevor", "Harry"
 age = (12, 34, 24, 57, 16)
-keys = random.randint(99999, 999999)
-zipped = dict(zip(name, age))
-with open("/home/fr3zing/python/Courses/Courses/lesson8/task_8_4.json", mode="w") as file:
-    js = {keys}
-    js_name_value = {"name": age}
-    js.update(js_name_value)
-    json.dump(js, file, indent=4)
+# for i in range(1,6)
+# keys = random.randint(99999, 999999)
+# zipped = dict(zip(name, age))
+#
+# # dict_1 = {keys: {}}
+#
+# for key, value in zipped.items():
+#     if key not in dict_1:
+#         dict_1[keys][key] = value
+# print(dict_1)

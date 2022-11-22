@@ -3,9 +3,6 @@
 которые являются палиндромами и результат вернет в виде кортежа, например («rotator», «noon»)
 """
 list_1 = ["Rotator", "Noon", "abf"]
-list_2 = []
-for item in list_1:
-    item = item.lower()
-    list_2.append(item)
+list_2 = [x.lower() for x in list_1]
 a = list(filter(lambda x: x == x[::-1], list_2))
 print(a)

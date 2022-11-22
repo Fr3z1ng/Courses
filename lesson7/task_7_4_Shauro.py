@@ -21,7 +21,7 @@ def log_function(func):
     def wrapper(*args, **kwargs):
         start = datetime.now()
         result = func(*args, **kwargs)
-        print(f"{start}| Function: {func.__name__} | Expected: {func.__annotations__} | Input: {args}")
+        print(f"{start}| Function: {func.__name__} | Expected: {func.__annotations__} | Input: {args,kwargs}")
         return result
 
     return wrapper

@@ -20,13 +20,13 @@ Current result = '12'
 """
 import functools
 
-storage = [None]  # переменная для временного хранения памяти
+# storage = [None]  # переменная для временного хранения памяти
 
 
 def remember_result(func):
-    @functools.wraps(func)
+    storage = [None]
     def wrapper(*args, **kwargs):
-        global storage  # для того что бы использовать переменную памяти
+        nonlocal storage # для того что бы использовать переменную памяти
         print(f"Last result = {storage}")  # показываем результат предыдущей функции
         storage = func(*args, **kwargs)  # записывает последний результат для временного хранения
 
@@ -38,8 +38,7 @@ def sum_list(*args):
     result = ""
     for item in args:
         if isinstance(item, int):  # проверка валидации является ли аргумент целым числом
-            result = list(
-                result)  # превращаем result в список что бы лучше посчитать сумму чисел с помощью метода sum()
+            result = list(result)  # превращаем result в список что бы лучше посчитать сумму чисел с помощью метода sum()
             result.append(item)  # добавляем аргументы в список #
         else:
             result += item  # если элемент не является целым числом,то просто добавляем его в строку
