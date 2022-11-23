@@ -17,13 +17,12 @@ import json
 
 name = "Tim", "John", "Sally", "Trevor", "Harry"
 age = (12, 34, 24, 57, 16)
-# for i in range(1,6)
-# keys = random.randint(99999, 999999)
-# zipped = dict(zip(name, age))
-#
-# # dict_1 = {keys: {}}
-#
-# for key, value in zipped.items():
-#     if key not in dict_1:
-#         dict_1[keys][key] = value
-# print(dict_1)
+zipped = dict(zip(name, age))
+some_dict = {}
+for key, value in zipped.items():
+    keys = random.randint(99999, 999999)
+    some_dict[keys] = {"name": key, "age": value}
+
+with open("file_json.json", mode="w") as file:
+    json_string = json.dump(some_dict,file,indent=4)
+

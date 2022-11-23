@@ -11,16 +11,11 @@ d = 'python'
 with open("task_8_2.txt", mode="w") as file:
     data = [a, b]
     for line in data:
-        file.write(line + "\n")
+        file.write(line + "|\n")
 with open("task_8_2.txt", mode="a") as file:
     data = [c, d]
     for line in data:
-        file.write(line.title() + "\n")
-
-with open("task_8_2.txt", mode="w") as file:
-    data = [a, b, c, d]
-    for line in data:
-        file.write(line + "|\n")
+        file.write(line.title() + "|\n")
 """
 Только не понял нужно записывать что бы 2 строки должны быть в верхнем регистер или нет
 """
