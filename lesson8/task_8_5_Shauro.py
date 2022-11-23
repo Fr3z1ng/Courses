@@ -27,7 +27,6 @@ def transform_to_csv(json_string: str):
     one_list = list(zip(names, ages, id_s))
     csv_name = input('Введите название CSV файла в который желаете сохранить данные:')
     with open(f"{csv_name}.csv", mode="w") as csv_file:
-        fieldnames = ["name", "age", "id"]
         csv_writer = csv.writer(csv_file, delimiter=",")
         csv_writer.writerow(["name", "age", "id"])
         for i in one_list:
