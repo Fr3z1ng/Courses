@@ -13,23 +13,26 @@ with open(f"{json_name}.json", mode="r") as file:
 
 
 def transform_to_csv(json_string: str):
+    """
+    Функция принимают JSON файл и делает преобразование в CSV файл
+    """
     names = []
     ages = []
     id_s = []
     for key, value in json_string.items():
         id_s.append(key)
-        for name, age in value.items():
-            if name == "name":
-                names.append(age)
+        for first, second in value.items():
+            if first == "name":
+                names.append(second)
             else:
-                ages.append(age)
+                ages.append(second)
 
-    one_list = list(zip(names, ages, id_s))
+    obj_list = list(zip(names, ages, id_s))
     csv_name = input('Введите название CSV файла в который желаете сохранить данные:')
     with open(f"{csv_name}.csv", mode="w") as csv_file:
         csv_writer = csv.writer(csv_file, delimiter=",")
         csv_writer.writerow(["name", "age", "id"])
-        for i in one_list:
+        for i in obj_list:
             csv_writer.writerow(list(i))
 
 
