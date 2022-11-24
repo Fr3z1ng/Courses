@@ -20,7 +20,7 @@ age = (12, 34, 24, 57, 16)
 zipped = dict(zip(name, age))
 some_dict = {}
 for key, value in zipped.items():
-    keys = random.randint(99999, 999999)
+    keys = random.randint(100000, 999999)
     some_dict[keys] = {"name": key, "age": value}
 
 with open("file_json.json", mode="w") as file:
