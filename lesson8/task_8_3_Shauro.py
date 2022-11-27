@@ -13,9 +13,8 @@ with open("unsorted_names.txt", mode="r") as file:
 src.sort()
 sorted_name = []
 for i in src:
-    i = i.strip("\n")
     sorted_name.append(i)
 print(sorted_name)
 with open("sorted_names.txt", mode="w") as file:
     for item in sorted_name:
-        file.write(item.strip("\n") + "\n")
+        file.writelines(item.strip("\n") + "\n")

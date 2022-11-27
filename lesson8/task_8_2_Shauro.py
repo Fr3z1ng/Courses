@@ -15,7 +15,7 @@ with open("task_8_2.txt", mode="w") as file:
 with open("task_8_2.txt", mode="a") as file:
     data = [c, d]
     for line in data:
-        file.write(line.title() + "|\n")
+        file.write(f"{line.title()}" + "|\n")
 """
 Только не понял нужно записывать что бы 2 строки должны быть в верхнем регистер или нет
 """
