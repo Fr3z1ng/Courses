@@ -19,7 +19,9 @@ symb = [",", " ", ":", "."]
 
 
 class Cipher():
-
+    """
+    Класс кодируют и декодирует последовательность взависимости от указанного шифра
+    """
     def encode(self, string):
         new_string = ""
         for i in string:
