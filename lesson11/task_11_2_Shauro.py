@@ -7,9 +7,9 @@
 class Swap:
 
     def __init__(self):
-        self.F = None
-        self.K = None
-        self.C = None
+        self.F = 32
+        self.K = 273.15
+        self.C = 0
 
     def Celsius(self, C):
         self.C = C
@@ -29,7 +29,7 @@ class Swap:
 
 swap_1 = Swap()
 swap_1.Celsius(57)
-print(swap_1.F)
-swap_1.Kelvin(57)
+print(swap_1.K)
+swap_1.Kelvin(330.15)
 print(swap_1.C)
 print(swap_1.F)
