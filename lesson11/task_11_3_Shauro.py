@@ -62,18 +62,16 @@ class Deque:
     @classmethod
     def pop_left(cls):
         """
-        Метод удаляет элементы из очереди слева
+        Метод удаляет элементы из очереди слева и возвращает его
         """
-        cls.deque.pop(0)
-        return cls.deque
+        return cls.deque.pop(0), cls.deque
 
     @classmethod
     def pop_right(cls):
         """
-        Метод удаляет элементы из очереди справа
+        Метод удаляет элементы из очереди справа и возвращает его
         """
-        cls.deque.pop(-1)
-        return cls.deque
+        return cls.deque.pop(-1), cls.deque
 
 
 print(Deque.append_left(data_1))
