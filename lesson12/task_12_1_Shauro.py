@@ -14,37 +14,43 @@
 quit
 """
 
+"""
+В общем я понимаю что реализация какая-то не та,что должен я был в функцию засунуть цикл While,но что-то
+когда туда пытаюсь всунуть цикл,происходит какая-то проблема
+"""
 
-class InputFormulaError(Exception):
+
+class InputFormulaError(Exception):  # Собственный класс ошибки формулы
     pass
 
 
-class InputNumberError(Exception):
+class InputNumberError(Exception):  # Собственный класс ошибки числа
     pass
 
 
-class InputOperatorError(Exception):
+class InputOperatorError(Exception):  # Собственный класс операнды вычисления
     pass
 
 
 while True:
-    values = input("Введите данные в виде (1 + 1) с любым операторам (+,-,*,/,**):").lower()
-    storage_operand = ["*", "+", "-", "/", "**"]
-    storage = values.split(" ")
+    values = input("Введите данные в виде (1 + 1) с любым операторам (+,-,*,/,**):").lower()  # ввод данных
+    storage_operand = ["*", "+", "-", "/", "**"]  # для проверки ввода операции вычисления
+    storage = values.split(" ")  # разделение на 3 части входных данных
     try:
-        if len(storage) > 3:
+        if len(storage) > 3:  # проверка на кол-во входных данных
             raise InputFormulaError
-        elif values == "quit":
+        elif values == "quit":  # выход из цикла
             break
-        elif isinstance(storage[0], None | bool) or isinstance(storage[2], None | bool):
+        elif isinstance(storage[0], None | bool | list | tuple) or isinstance(storage[2], None | bool | list | tuple):
+            # проверка на число,так строка может преобразоваться в флоат,а если не преобразуется выкинет ошибку
             raise InputNumberError
-        elif storage[1] not in storage_operand:
+        elif storage[1] not in storage_operand:  # проверка на правильную операнду вычисления
             raise InputOperatorError
-    except InputOperatorError as error:
+    except InputOperatorError:
         print(f"Произошла ошибка попробуйте еще раз или напишите 'quit' ")
-    except InputFormulaError as error:
+    except InputFormulaError:
         print(f"Произошла ошибка попробуйте еще раз или напишите 'quit' ")
-    except InputNumberError as error:
+    except InputNumberError:
         print(f"Произошла ошибка попробуйте еще раз или напишите 'quit' ")
 
 
