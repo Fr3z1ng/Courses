@@ -42,6 +42,7 @@ class Validator:
     """
     Класс принимает логин,пароль,email и делает валидацию этих аргументов
     """
+
     def __init__(self, login, password, email):
         self.login = login
         self.password = password
@@ -51,7 +52,7 @@ class Validator:
         """
         Метод делает валидацию на проверку email
         """
-        if "@" in self.email and self.email.endswith(".by"):
+        if "@" in self.email and self.email.endswith(".by") or self.email.endswith(".ru"):
             return True
         else:
             raise InvalidEmail
@@ -84,11 +85,7 @@ class Validator:
             self.validate_email()
             self.validate_login()
             self.validate_password()
-        except InvalidLogin:
-            raise Validation
-        except InvalidEmail:
-            raise Validation
-        except InvalidPassword:
+        except (InvalidLogin, InvalidPassword, InvalidEmail):
             raise Validation
 
 

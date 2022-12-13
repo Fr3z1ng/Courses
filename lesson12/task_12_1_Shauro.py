@@ -33,7 +33,7 @@ class InputOperatorError(Exception):  # Собственный класс опе
 
 
 while True:
-    values = input("Введите данные в виде (1 + 1) с любым операторам (+,-,*,/,**):").lower()  # ввод данных
+    values = input("Введите данные в виде (1 + 1) с любым операторам (+,-,*,/,**):")  # ввод данных
     storage_operand = ["*", "+", "-", "/", "**"]  # для проверки ввода операции вычисления
     storage = values.split(" ")  # разделение на 3 части входных данных
     try:
@@ -41,7 +41,7 @@ while True:
             raise InputFormulaError
         elif values == "quit":  # выход из цикла
             break
-        elif isinstance(storage[0], None | bool | list | tuple) or isinstance(storage[2], None | bool | list | tuple):
+        elif isinstance(storage[0], float) or isinstance(storage[2], float):
             # проверка на число,так строка может преобразоваться в флоат,а если не преобразуется выкинет ошибку
             raise InputNumberError
         elif storage[1] not in storage_operand:  # проверка на правильную операнду вычисления
@@ -54,7 +54,7 @@ while True:
         print(f"Произошла ошибка попробуйте еще раз или напишите 'quit' ")
 
 
-    def calculator(storage: list) -> float | InputFormulaError | InputNumberError | InputOperatorError:
+    def calculator(storage: list) -> float:
 
         first = float(storage[0])
         second = float(storage[2])

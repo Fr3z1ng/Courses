@@ -56,11 +56,7 @@ class Queue:
                     else:  # иначе вызываем ошибку если элементов больше 3 после точки
                         raise InvalidFloatNumber
                 elif isinstance(i, str):  # проверка на строку
-                    some_count = 0  # переменная для хранения count
-                    for value in i:  # проходим циклом для нахождения повторяющихся элементов
-                        count = i.count(value)  # считаем кол-во повторяющихся символов
-                        some_count = count  # перезаписываем переменную для хранения
-                    if some_count <= 2 and len(i) <= 4:  # если кол-во повторяюшихся элементов подходит и длина меньше 5
+                    if len(i) == len(set(i)):
                         self.queue.append(i)  # добавляем в список
                     else:
                         raise InvalidStr  # иначе если не подходит условию делаем ошибку
