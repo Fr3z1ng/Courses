@@ -41,7 +41,7 @@ class Validator:
         """
         Метод делает валидацию на проверку email
         """
-        if re.match(r'^[\w.-]+@[\w.-]+\.[by]', self.email):
+        if re.match(r'^[\w.-]+@[\w.-]+\.(\S{2}$)', self.email):
             return True
         else:
             raise InvalidEmail
@@ -50,7 +50,7 @@ class Validator:
         """
         Метод делает валидацию на проверку логина
         """
-        if re.match(r'[0-9a-zA-Z$%#^]{6,}$', self.login):
+        if re.match(r'[0-9a-zA-Z]{6,10}$', self.login):
             return True
         else:
             raise InvalidLogin
@@ -80,5 +80,5 @@ class Validator:
             raise Validation
 
 
-validator = Validator("Sasha1", "#sashaShro#", "sobaka@mail.by")
+validator = Validator("Sasha1f", "#sashaShro#", "sobaka@mail.by")
 validator.validation()

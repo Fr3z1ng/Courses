@@ -21,11 +21,9 @@ def names_with_letter(path, letter):
     генератор для чтения файла и который выводит все файлы начинающийся на введенный символ
     """
     with open(path, mode="r") as file:
-        src = file.readlines()
-        for i in src:
-            i = i.strip("\n")
-            if i.startswith(letter.upper()):
-                yield i
+        for line in file:
+            if line.startswith(letter.upper()):
+                yield line
 
 
 for i in names_with_letter(path, letter):

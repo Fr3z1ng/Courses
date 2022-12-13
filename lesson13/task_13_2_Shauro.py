@@ -22,9 +22,10 @@ class MySquareIterator:
     def __next__(self):
         try:
             result = self.lst[self.start]
-            self.start += 1
         except IndexError:
             raise StopIteration
+        else:
+            self.start += 1
         return result ** 2
 
     def __iter__(self):

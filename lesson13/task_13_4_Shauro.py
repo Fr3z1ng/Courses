@@ -24,8 +24,9 @@ class EvenRange:
     """
     Класс генератора который выводит только четные числа в заданном диапазоне
     """
+
     def __init__(self, start: int, stop: int):
-        self.start = start
+        self.start = start + 1 if start % 2 else start
         self.stop = stop
 
     def __next__(self):
@@ -35,9 +36,10 @@ class EvenRange:
             else:
                 self.start += 1
             result = self.start
-            return print(result)
+            return result
         else:
             print(f"Out of number")
+            raise StopIteration
 
     def __iter__(self):
         return self
