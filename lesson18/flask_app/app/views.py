@@ -20,13 +20,16 @@ def quote():
             some_list.append(value)
         return render_template("index.html", some_list=some_list)
     elif int(quotes) > 0:  # если цитаты все таки есть,то посчитать их кол-во для вывода определенного кол-ва цитат
-        i = 1
-        while i <= int(quotes):  # использую цикл while,что бы запрашивать каждый раз новую цитату
-            src = requests.get('https://api.kanye.rest')
-            for value in src.json().values():
-                some_list.append(value)
-            i += 1
-        return render_template("index.html", some_list=some_list)
+        url = 'https://api.kanye.rest'
+        west = [requests.get(url).json()['quote'] for x in range(int(quotes))] # сделал по вашему методу гораздо локаничней
+
+        # while i <= int(quotes):  # использую цикл while,что бы запрашивать каждый раз новую цитату
+        #     src = requests.get('https://api.kanye.rest')
+        #     for value in src.json().values():
+        #         some_list.append(value)
+        #     i += 1
+
+        return render_template("index.html", some_list=west)
 
 
 @app1.route('/register', methods=["POST", "GET"])
